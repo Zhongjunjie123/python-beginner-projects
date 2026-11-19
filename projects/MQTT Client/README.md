@@ -1,4 +1,4 @@
-# MQTT Client
+# MQTT Client （已学）
 > This code connects to an MQTT broker to publish and subscribe to topics to receive messages.
 
 ## MQTT Operation
