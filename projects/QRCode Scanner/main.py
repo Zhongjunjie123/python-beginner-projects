@@ -36,12 +36,12 @@ def decoder(image):
 choice = int(input("1. Scan via image\n2. Scan via WebCam\n Choice: "))
 if choice == 2:
     # Accessing webcam for images
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(0)        #0 是摄像头设备的索引 cap.read()读取一帧图像 cap.isOpened()检查摄像头是否成功打开 cap.release()释放摄像头资源cap.get()获取摄像头属性 cap.set()设置摄像头属性
     while True:
-        ret, frame = cap.read()
+        ret, frame = cap.read()      #read() 会返回两个值：(True, 图像数据)
         decoder(frame)
         cv2.imshow("Image", frame)
-        code = cv2.waitKey(10)
+        code = cv2.waitKey(10)       #等待键盘输入，同时处理 OpenCV 窗口的 GUI 事件，并返回检测到的按键对应的键码（只是负责检测有没有按键，并返回按键对应的编码）
         if code == ord("q"):
             break
 else:
